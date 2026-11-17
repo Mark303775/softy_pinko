@@ -3,38 +3,41 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const Card = () =>{
-    return(
-        <>
-            <Container className="cards">
-                <Row>
-                    <Col className="card col-12 col-sm-12 col-md-6 col-lg-4">
+
+ 
+
+
+const Card = () => {
+    const cardsData = [
+        {
+            title: "Modern Strategy",
+            text: "Customize anything in this template to fit your website needs"
+        },
+        {
+            title: "Best Relationship",
+            text: "Contact us immediately if you have a question in mind"
+        },
+        {
+            title: "Ultimate Marketing",
+            text: "You just need to tell your friends about our free templates"
+        }
+    ];
+
+    return (
+        <Container className="cards">
+            <Row>
+                {cardsData.map((item, index) => (
+                    <Col key={index} className="card col-12 col-sm-12 mb-4 mt-8 mt-lg-0 mb-lg-0 col-md-6  col-lg-4">
                         <div className='img'>
                             <img src={card}/>
                         </div>
-                        <h5>Modern Strategy</h5>
-                        <p>Customize anything in this template to fit your website needs</p>
+                        <h5>{item.title}</h5>
+                        <p>{item.text}</p>
                     </Col>
+                ))}
+            </Row>
+        </Container>
+    );
+};
 
-                    <Col className="card col-12 col-sm-12 col-md-6 col-lg-4">
-                        <div className='img'>
-                            <img src={card}/>
-                        </div>
-                        <h5>Best Relationship</h5>
-                        <p>Contact us immediately if you have a question in mind</p>
-                    </Col>
-
-                    <Col className="card col-12 col-sm-12 col-md-6 col-lg-4">
-                        <div className='img'>
-                            <img src={card}/>
-                        </div>
-                        <h5>Ultimate Marketing</h5>
-                        <p>You just need to tell your friends about our free templates</p>
-                    </Col>
-                </Row>
-            </Container>
-        </>
-    )
-}
-
-export default Card
+export default Card;

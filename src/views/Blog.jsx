@@ -8,6 +8,26 @@ import entry02 from '../assets/images/blog-item-02.png'
 import entry03 from '../assets/images/blog-item-03.png'
 
 const Blog = () => {
+    const card=[
+        {
+            link:"Vivamus ac vehicula dui",
+            text:"Cras aliquet ligula dui, vitae fermentum velit tincidunt id Praesent eu finibus nunc. Nulla in sagittis eros. Aliquam egestas augue.",
+            btn:"READ MORE"
+
+        },
+          {
+            link:"Phasellus convallis augue",
+            text:"Aliquam commodo ornare nisl, et scelerisque nisl dignissim ac  Vestibulum finibus urna ut velit venenatis, vel ultrices sapien mattis.",             
+            btn:"READ MORE"
+
+        },
+          {
+            link:"Nam gravida purus non",
+            text:"Maecenas eu erat vitae dui convallis consequat vel gravida nulla Vestibulum finibus euismod odio, ut tempus enim varius eu.",            
+            btn:"READ MORE"
+
+        },
+    ]
   return (
     <>
         <section className='blog mt-5 mb-5' id='blog'>
@@ -18,43 +38,20 @@ const Blog = () => {
                         <p className='mt-4'>Integer molestie aliquam gravida. Nullam nec arcu finibus, imperdiet nulla vitae, placerat nibh. Cras maximus venenatis molestie.</p>
                     </Col>
                 </Row>
-                <Row className='mt-5'>
-                    <Col className='col-12 col-sm-12 col-md-6 col-lg-4 entry'>
+                 <Row className='mt-5'>
+                {
+                    card.map((item,index)=>(
+                       <Col className='col-12 col-sm-12 col-md-6 col-lg-4 entry' key={index}>
                         <img src={entry01} />
-                        
                         <div className="txt">
-                            <h5><a href="">Vivamus ac vehicula dui</a></h5>
-                            <p>Cras aliquet ligula dui, vitae fermentum velit tincidunt id. 
-                                Praesent eu finibus nunc. Nulla in sagittis eros. Aliquam egestas augue.
-                            </p>
+                            <h5><a href="">{item.link}</a></h5>
+                            <p>{item.text}</p>
                         </div>
 
-                        <Button>READ MORE</Button>
+                        <Button>{item.btn}</Button>
                     </Col>
-                    <Col className='col-12 col-sm-12 col-md-6 col-lg-4 entry'>
-                        <img src={entry02} />
-                        
-                        <div className="txt">
-                            <h5><a href="">Phasellus convallis augue</a></h5>
-                            <p>Aliquam commodo ornare nisl, et scelerisque nisl dignissim ac. 
-                                Vestibulum finibus urna ut velit venenatis, vel ultrices sapien mattis.
-                            </p>
-                        </div>
-
-                        <Button>READ MORE</Button>
-                    </Col>
-                    <Col className='col-12 col-sm-12 col-md-6 col-lg-4 entry'>
-                        <img src={entry03} />
-                        
-                        <div className="txt">
-                            <h5><a href="">Nam gravida purus non</a></h5>
-                            <p>Maecenas eu erat vitae dui convallis consequat vel gravida nulla. 
-                                Vestibulum finibus euismod odio, ut tempus enim varius eu.
-                            </p>
-                        </div>
-
-                        <Button>READ MORE</Button>
-                    </Col>
+                    ))
+                }
                 </Row>
             </Container>
         </section>

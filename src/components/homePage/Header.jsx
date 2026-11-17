@@ -5,7 +5,7 @@ import logo from '../../assets/images/logo.png'
 
 const Header = () => (
     <>
-        <Navbar className='navbar' expand="lg">
+        <Navbar className='navbar mx-5 mx-lg-11' expand="lg">
             <Container>
                 <Navbar.Brand href="#home">
                     <img
